@@ -4,8 +4,91 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import React from 'react'
+import React, { Dispatch } from 'react';
 
+export type CloudinaryOptions = {
+  cloudName: string;
+  uploadPreset: string;
+  folder: string;
+  multiple: boolean;
+};
+
+export type HowItWorksContent = {
+  steps: [
+    { title: string; subtitle: string },
+    { title: string; subtitle: string },
+    { title: string; subtitle: string }
+  ];
+  title: string;
+  subtitle: string;
+  submittedSubtitle: string;
+  submittedTitle: string;
+  footerCloseMessage?: string;
+};
+export interface InputPlaceholders extends InputValues {}
+
+export type InputValues = {
+  adTitle?: string;
+  budget?: number | string;
+  target?: string;
+  adCopy?: string;
+  adCallToAction?: string;
+  buttonText?: string;
+  creativeUri?: object[];
+  creativeUrls?: string[];
+  isFlat?: boolean;
+};
+export type InputConfig = {
+  minSpend?: number;
+  maxSpend?: number;
+  rangeStep?: number;
+};
+
+export type PromoOptions = {
+  cloudinary?: CloudinaryOptions;
+  howItWorksContent?: HowItWorksContent;
+  inputValues?: InputValues;
+  inputPlaceholders?: InputPlaceholders;
+  inputConfig?: InputConfig;
+  setPromoData?: Dispatch<InputValues | null>;
+  paymentType?: string;
+  targetLinkIcons?: SocialsType;
+};
+export type ButtonFormElements = HTMLFormControlsCollection & {
+  target: HTMLInputElement;
+  budget: HTMLInputElement;
+  adTitle: HTMLInputElement;
+  buttonText: HTMLInputElement;
+  adCallToActionText: HTMLInputElement;
+  adCopyInputText: HTMLInputElement;
+  paymentTypeInput: HTMLInputElement;
+};
+export type ButtonFormSubmission = HTMLFormElement & {
+  readonly elements: ButtonFormElements;
+};
+export type SocialKey =
+  | 'LinkedIn'
+  | 'Spotify'
+  | 'Twitter'
+  | 'Facebook'
+  | 'Github'
+  | 'Instagram'
+  | 'Snapchat'
+  | 'Apple'
+  | 'YouTube'
+  | 'Web Url'
+  | 'TikTok'
+  | '';
+export type SocialsType = {
+  Instagram?: SocialKey;
+  Spotify?: SocialKey;
+  Facebook?: SocialKey;
+  'Web Url'?: SocialKey;
+  YouTube?: SocialKey;
+  Apple?: SocialKey;
+  Twitter?: SocialKey;
+  TikTok?: SocialKey;
+};
 export type HeroiconIcon = React.ForwardRefExoticComponent<
   Omit<React.SVGProps<SVGSVGElement>, 'ref'> & {
     title?: string | undefined;
@@ -13,10 +96,9 @@ export type HeroiconIcon = React.ForwardRefExoticComponent<
   } & React.RefAttributes<SVGSVGElement>
 >;
 
-export interface DownloadableCampaignStatsSample
-  extends PromoApiCampaignStatsSample {
+export type DownloadableCampaignStatsSample = PromoApiCampaignStatsSample & {
   pid: string;
-}
+};
 
 export interface DownloadableCampaignMetadataSample
   extends DownloadableCampaignStatsSample {
