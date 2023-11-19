@@ -39,8 +39,12 @@ npm install @tincre/promo-types# --save-dev if you want it as a dev dep
 
 #### Usage example
 
-```jsx
+```ts
 import { CampaignData } from '@tincre/promo-types';
+
+const data: CampaignData = {
+    ...//your actual stuff here
+}
 ```
 
 ## Support
