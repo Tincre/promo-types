@@ -100,18 +100,18 @@ export type DownloadableCampaignStatsSample = PromoApiCampaignStatsSample & {
   pid: string;
 };
 
-export interface DownloadableCampaignMetadataSample
-  extends DownloadableCampaignStatsSample {
-  adTitle?: string;
-  budget?: number | string;
-  target?: string;
-  isActive?: boolean;
-  adCallToAction?: string;
-  buttonText?: string;
-  creativeUrl: string;
-}
+export type DownloadableCampaignMetadataSample =
+  DownloadableCampaignStatsSample & {
+    adTitle?: string;
+    budget?: number | string;
+    target?: string;
+    isActive?: boolean;
+    adCallToAction?: string;
+    buttonText?: string;
+    creativeUrl: string;
+  };
 
-export interface PromoApiCampaignStatsSample {
+export type PromoApiCampaignStatsSample = {
   updatedTime?: string;
   updated_time?: string;
   spend?: number | string | null;
@@ -122,19 +122,19 @@ export interface PromoApiCampaignStatsSample {
   ctr?: number | string | null;
   cpm?: number | string | null;
   cpv?: number | string | null;
-}
+};
 
-export interface CampaignStatsSample {
+export type CampaignStatsSample = {
   name: string;
-}
+};
 
-export interface PromoApiCampaignStatsData {
+export type PromoApiCampaignStatsData = {
   totals?: PromoApiCampaignStatsSample[];
   google?: PromoApiCampaignStatsSample[];
   meta?: PromoApiCampaignStatsSample[];
-}
+};
 
-export interface DownloadableCampaignStats {
+export type DownloadableCampaignStats = {
   updatedTime: (string | null)[];
   spend?: (number | string | null)[];
   reach?: (number | string | null)[];
@@ -145,7 +145,7 @@ export interface DownloadableCampaignStats {
   ctr?: (number | string | null)[];
   cpv?: (number | string | null)[];
   pid: (string | null)[];
-}
+};
 
 export type CampaignMetrics =
   | 'Spend'
@@ -158,7 +158,7 @@ export type CampaignMetrics =
   | 'CPV'
   | string;
 
-export interface CampaignStatsData {
+export type CampaignStatsData = {
   id: number | undefined;
   name: CampaignMetrics;
   stat: string;
@@ -175,9 +175,9 @@ export interface CampaignStatsData {
     labels: (string | null)[];
     data: (string | number | null)[];
   };
-}
+};
 
-export interface CampaignMetadata {
+export type CampaignMetadata = {
   pid?: string;
   email?: string;
   adTitle?: string;
@@ -195,26 +195,26 @@ export interface CampaignMetadata {
   usageFee?: string | number;
   startDate?: string;
   createdAt?: string;
-}
+};
 
-export interface CampaignData extends CampaignMetadata {
+export type CampaignData = CampaignMetadata & {
   stats?: CampaignStatsData[];
   data?: PromoApiCampaignStatsData;
-}
+};
 
-export interface CampaignDummyData extends CampaignMetadata {
+export type CampaignDummyData = CampaignMetadata & {
   stats?: CampaignStatsData[];
   data?: CampaignStatsData[];
-}
+};
 
-export interface CampaignSortedData extends CampaignDummyData {}
+export type CampaignSortedData = CampaignDummyData & {};
 
-export interface Settings {
+export type Settings = {
   fullName?: string;
   image?: string;
   userName?: string;
   email?: string;
-}
+};
 
 export type DashboardOptions = {
   emailDomain?: string;
