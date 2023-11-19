@@ -6,8 +6,6 @@ Types for Tincre [Promo](https://tincre.dev/promo). Use it in conjunction with t
   - [Installation](#installation)
     - [Yarn](#yarn)
     - [Npm](#npm)
-    - [Environment variables](#environment-variables)
-      - [`.env.local` Example](#envlocal-example)
     - [Usage](#usage)
   - [Support](#support)
   - [License](#license)
@@ -35,11 +33,8 @@ npm install @tincre/promo-types# --save-dev if you want it as a dev dep
 
 ### Usage
 
-- Import the frontend component
-- Add backend functionality
-- Update the backend property in your frontend from 1
-- Add an environment file, e.g. .env.local
-- Add environment variables to your deployment
+- Import the types
+- Use the types
 - Deploy!
 
 #### Usage example
