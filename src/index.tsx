@@ -25,7 +25,7 @@ export type HowItWorksContent = {
   submittedTitle: string;
   footerCloseMessage?: string;
 };
-export interface InputPlaceholders extends InputValues {}
+export type InputPlaceholders = InputValues & {};
 
 export type InputValues = {
   adTitle?: string;
