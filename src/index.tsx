@@ -53,6 +53,7 @@ export type PromoOptions = {
   setPromoData?: Dispatch<InputValues | null>;
   paymentType?: string;
   targetLinkIcons?: SocialsType;
+  adDisplayImageCropMessageText?: string;
 };
 export type ButtonFormElements = HTMLFormControlsCollection & {
   target: HTMLInputElement;
