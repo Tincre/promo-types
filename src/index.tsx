@@ -217,6 +217,24 @@ export type Settings = {
   email?: string;
 };
 
+export type CampaignType = {
+  name: string;
+  description?: string;
+  icon?:
+    | 'eye'
+    | 'magnifying-glass'
+    | 'rocket-launch'
+    | 'calendar'
+    | 'newspaper'
+    | 'arrow-uturn-left'
+    | 'user-group'
+    | 'video-camera'
+    | 'tag'
+    | 'heart'
+    | 'megaphone';
+  color?: string;
+};
+
 export type DashboardOptions = {
   emailDomain?: string;
   emailLocalPart?: string;
@@ -226,4 +244,5 @@ export type DashboardOptions = {
   promoChatAgentName?: string;
   promoChatInputMessagePlaceholder?: string;
   promoChatExecuteRecaptcha?: (action: string) => Promise<string>;
+  campaignTypes?: CampaignType[];
 };
