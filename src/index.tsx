@@ -14,15 +14,15 @@ export type CloudinaryOptions = {
 };
 
 export type HowItWorksContent = {
-  steps: [
+  steps?: [
     { title: string; subtitle: string },
     { title: string; subtitle: string },
     { title: string; subtitle: string }
   ];
-  title: string;
-  subtitle: string;
-  submittedSubtitle: string;
-  submittedTitle: string;
+  title?: string;
+  subtitle?: string;
+  submittedSubtitle?: string;
+  submittedTitle?: string;
   footerCloseMessage?: string;
 };
 export type InputPlaceholders = InputValues & {};
